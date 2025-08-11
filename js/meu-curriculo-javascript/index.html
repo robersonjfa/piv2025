@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Currículo Interativo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>João Silva</h1>
+    <p>Desenvolvedor Web • Front-end & Back-end</p>
+    <nav aria-label="Navegação principal">
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="acoes-header">
+      <input id="nomeInput" type="text" placeholder="Digite seu nome" aria-label="Seu nome">
+      <button id="btnSaudar">Saudar</button>
+      <button id="btnTema" aria-pressed="false">Alternar Tema</button>
+    </div>
+    <p id="saudacao" class="muted"></p>
+    <p class="muted">Visitas nesta página: <span id="visitas">0</span></p>
+  </header>
+
+  <main id="conteudo">
+    <section id="sobre" aria-labelledby="titulo-sobre">
+      <h2 id="titulo-sobre">Sobre mim</h2>
+      <article>
+        <p>Sou apaixonado por tecnologia, ensino e boas práticas. Trabalho com HTML, CSS, JavaScript e TypeScript.</p>
+        <p>Idade estimada (JS): <span id="idade-estimada">—</span></p>
+      </article>
+      <figure>
+        <img src="https://via.placeholder.com/360x200" alt="Foto ilustrativa do desenvolvedor" />
+        <figcaption>Foto ilustrativa</figcaption>
+      </figure>
+      <canvas id="grafico" width="360" height="120" aria-label="Canvas decorativo"></canvas>
+    </section>
+
+    <section id="habilidades" aria-labelledby="titulo-habilidades">
+      <h2 id="titulo-habilidades">Habilidades</h2>
+
+      <div class="filtros">
+        <input id="filtroSkill" type="text" placeholder="Filtrar habilidades..." aria-label="Filtrar habilidades">
+        <button id="btnFiltrar">Aplicar filtro</button>
+        <button id="btnResetar">Resetar</button>
+      </div>
+
+      <ul id="listaSkills" class="skills"></ul>
+
+      <div class="adicionar-skill">
+        <input id="novaSkill" type="text" placeholder="Nova habilidade (ex: Node.js)" aria-label="Nova habilidade">
+        <input id="novaSkillNivel" type="number" min="0" max="100" value="60" aria-label="Nível da habilidade">
+        <button id="btnAdicionarSkill">Adicionar habilidade</button>
+      </div>
+    </section>
+
+    <section id="projetos" aria-labelledby="titulo-projetos">
+      <h2 id="titulo-projetos">Projetos</h2>
+      <article class="card">
+        <h3>Site Pessoal</h3>
+        <p>Site estático responsivo com HTML/CSS/JS.</p>
+        <a href="#" aria-label="Ver projeto site pessoal">Ver projeto</a>
+      </article>
+      <article class="card">
+        <h3>API de Tarefas</h3>
+        <p>API simples com Node.js e Express.</p>
+        <a href="#" aria-label="Ver projeto API de tarefas">Ver projeto</a>
+      </article>
+    </section>
+
+    <section id="contato" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Contato</h2>
+      <form id="formContato" novalidate>
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="nome@exemplo.com" required />
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+        <p id="statusForm" class="muted" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <aside aria-label="Links úteis" class="aside">
+    <h2>Links úteis</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+      <li><a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a></li>
+      <li><a href="https://layoutit.com/" target="_blank" rel="noopener">LayoutIt!</a></li>
+    </ul>
+  </aside>
+
+  <footer>
+    <p>&copy; 2025 João Silva</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

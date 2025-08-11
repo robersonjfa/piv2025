@@ -1,0 +1,145 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --card: #f3f4f6;
+  --border: #e5e7eb;
+}
+
+[data-tema="escuro"] {
+  --bg: #0b1220;
+  --fg: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #60a5fa;
+  --card: #111827;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu {
+  display: flex;
+  gap: 12px;
+  padding-left: 0;
+  list-style: none;
+  margin: 8px 0 16px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.acoes-header {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.muted { color: var(--muted); }
+
+main {
+  max-width: 1000px;
+  padding: 24px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+section, .aside, .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.skills { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 12px; 
+  padding-left: 0; 
+  list-style: none;
+}
+
+.skill {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.barra {
+  height: 10px;
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.barra > span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  width: 0%;
+  transition: width 400ms ease;
+}
+
+.card h3 { margin-top: 0; }
+.card a { color: var(--primary); }
+
+.aside {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+input, textarea, button {
+  font: inherit;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--fg);
+}
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover { opacity: .95; }
+
+footer {
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+/* responsivo simples */
+@media (min-width: 1100px) {
+  main {
+    grid-template-columns: 3fr 1fr;
+  }
+  .aside {
+    grid-column: 1 / -1;
+  }
+}
