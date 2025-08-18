@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TastyBoard • Receitas (jQuery)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="container">
+    <h1 class="app-title">TastyBoard</h1>
+    <p class="muted">Explorar receitas — demo inicial (jQuery)</p>
+
+    <div class="searchbar" role="search">
+      <label for="q" class="visually-hidden">Pesquisar receitas</label>
+      <input id="q" type="search" placeholder="Pesquisar por nome ou descrição…" aria-label="Pesquisar receitas">
+      <button id="btnClear" class="btn btn-secondary" aria-label="Limpar pesquisa">Limpar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-live="polite" aria-busy="false">
+      <ul id="grid" class="grid" role="list"></ul>
+      <p id="empty" class="empty muted" hidden>Nenhuma receita encontrada.</p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>Demo responsiva • jQuery + HTML/CSS • Imagens de placeholder</small>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
