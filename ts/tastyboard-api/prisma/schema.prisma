@@ -1,4 +1,3 @@
-// Prisma schema — PostgreSQL com snake_case no banco
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,45 +7,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id         Int      @id @default(autoincrement()) @map("id")
-  name       String   @map("name")
-  email      String   @unique @map("email")
-  recipes    Recipe[]
-  createdAt  DateTime @default(now()) @map("created_at")
-  updatedAt  DateTime @updatedAt      @map("updated_at")
-
-  @@map("users")
-}
-
-model Category {
-  id         Int      @id @default(autoincrement()) @map("id")
-  name       String   @unique @map("name")
-  recipes    Recipe[]
-  createdAt  DateTime @default(now()) @map("created_at")
-  updatedAt  DateTime @updatedAt      @map("updated_at")
+model Categories {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @map("updated_at")
+  recipes   Recipes[]
 
   @@map("categories")
 }
 
-model Recipe {
-  id          Int       @id @default(autoincrement()) @map("id")
-  title       String    @map("title")
-  description String    @map("description")
-  imageUrl    String?   @map("image_url")
-  videoUrl    String?   @map("video_url")
-  ingredients Json      @map("ingredients")
-  steps       Json      @map("steps")
-  authorId    Int?      @map("author_id")
-  categoryId  Int?      @map("category_id")
-
-  author      User?     @relation(fields: [authorId], references: [id], onDelete: SetNull)
-  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
-
-  createdAt   DateTime  @default(now()) @map("created_at")
-  updatedAt   DateTime  @updatedAt      @map("updated_at")
+model Recipes {
+  id          Int         @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String?     @map("image_url")
+  videoUrl    String?     @map("video_url")
+  ingredients Json
+  steps       Json
+  authorId    Int?        @map("author_id")
+  categoryId  Int?        @map("category_id")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @map("updated_at")
+  users       Users?      @relation(fields: [authorId], references: [id])
+  categories  Categories? @relation(fields: [categoryId], references: [id])
 
   @@index([authorId], map: "idx_recipe_author")
   @@index([categoryId], map: "idx_recipe_category")
   @@map("recipes")
+}
+
+model Users {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @map("updated_at")
+  recipes   Recipes[]
+
+  @@map("users")
 }
