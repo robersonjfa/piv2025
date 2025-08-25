@@ -20,4 +20,3 @@ exports.AppModule = AppModule = __decorate([
         imports: [prisma_module_1.PrismaModule, recipes_module_1.RecipesModule, users_module_1.UsersModule, categories_module_1.CategoriesModule],
     })
 ], AppModule);
-//# sourceMappingURL=app.module.js.map

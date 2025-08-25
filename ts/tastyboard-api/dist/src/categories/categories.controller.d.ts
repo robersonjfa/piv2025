@@ -3,9 +3,9 @@ export declare class CategoriesController {
     private readonly service;
     constructor(service: CategoriesService);
     list(): import(".prisma/client").Prisma.PrismaPromise<{
-        name: string;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
     }[]>;
 }

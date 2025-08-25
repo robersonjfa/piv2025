@@ -3,10 +3,10 @@ export declare class UsersService {
     private prisma;
     constructor(prisma: PrismaService);
     list(): import(".prisma/client").Prisma.PrismaPromise<{
-        name: string;
-        email: string;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
+        email: string;
     }[]>;
 }

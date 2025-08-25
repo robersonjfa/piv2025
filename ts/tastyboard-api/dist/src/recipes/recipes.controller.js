@@ -67,4 +67,3 @@ exports.RecipesController = RecipesController = __decorate([
     (0, common_1.Controller)('recipes'),
     __metadata("design:paramtypes", [recipes_service_1.RecipesService])
 ], RecipesController);
-//# sourceMappingURL=recipes.controller.js.map

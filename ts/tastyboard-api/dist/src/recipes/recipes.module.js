@@ -19,4 +19,3 @@ exports.RecipesModule = RecipesModule = __decorate([
         providers: [recipes_service_1.RecipesService],
     })
 ], RecipesModule);
-//# sourceMappingURL=recipes.module.js.map
