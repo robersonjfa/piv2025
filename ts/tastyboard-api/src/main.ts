@@ -11,9 +11,9 @@ async function bootstrap() {
   console.log('🚀 API local em http://localhost:3001');
 }
 
-// Evita iniciar servidor ao rodar como Serverless na Vercel
+// Não levanta servidor HTTP na Vercel (serverless)
 if (!process.env.VERCEL) {
   bootstrap();
 }
 
-export {}; // mantém o arquivo como módulo
+export {};

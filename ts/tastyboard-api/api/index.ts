@@ -4,8 +4,7 @@ import { AppModule } from '../src/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import serverlessExpress from '@vendia/serverless-express';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import * as express from 'express';
-import { Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 
 let cachedServer: ReturnType<typeof serverlessExpress> | undefined;
 
